@@ -58,6 +58,7 @@ $(document).on("change", ".input_file", function(event) {
     type: 'post',
     success: function(data) {
         console.log('all ok')
+        window.location = current_path;
     }
   });
 
