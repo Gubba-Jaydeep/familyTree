@@ -1,6 +1,6 @@
 window.addEventListener('load', function() {
     console.log('All assets are loaded');
-    var textInput = document.querySelector('input');
+    var textInput = document.querySelector('#input_form');
     var inputWrap = textInput.parentElement ;
     var inputWidth = parseInt(getComputedStyle(inputWrap).width);
     var svgText = Snap('.line');
@@ -36,7 +36,39 @@ window.addEventListener('load', function() {
             });
          parentDiv.classList.remove('valid', 'invalid')
         });
+
+temp1=""
+temp2=""
+$(document).on("change", ".input_file", function(event) {
+    console.log('something happend')
+  var file_data = event.target.files[0]; // Getting the properties of file from file field
+  var current_path = window.location.pathname; // Getting the properties of file from file field
+  console.log(file_data)
+  var form_data = new FormData(); // Creating object of FormData class
+  form_data.append("file", file_data) // Appending parameter named file with properties of file_field to form_data
+  form_data.append("user_id", event.target.id.split('_')[2]) // Adding extra parameters to form_data
+  form_data.append("current_path", current_path) // Adding extra parameters to form_data
+  $.ajax({
+    url: "/upload_avatar", // Upload Script
+    dataType: 'script',
+    cache: false,
+    contentType: false,
+    processData: false,
+    data: form_data, // Setting the data attribute of ajax with file_data
+    type: 'post',
+    success: function(data) {
+        console.log('all ok')
+    }
+  });
+
+})
+
     })();
+
+
+
+
+
 
 //    var element =  document.getElementById('card_requestor');
 //    if (typeof(element) != 'undefined' && element != null){

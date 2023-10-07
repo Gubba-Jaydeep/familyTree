@@ -6,12 +6,14 @@ from os.path import join, dirname
 import pandas as pd
 
 app = Flask(__name__)
-source_data = '/Users/gubba.jaydeep/Documents/Project/famTree/static/data.csv'
+project_path = app.root_path
+source_data = project_path + '/static/data.csv'
 
 img_str1 = '''
 <div class="card" id={card_id} style="{style_data}">
         <div class="left">
-            <img class="profile_img" src="/static/images/{id}.jpg" onerror="this.onerror=null; this.src='/static/images/default.jpg'" alt="">
+            <input class="input_file" id="file_input_{id}" type="file" style="width: 200px;height: 200px;border-radius: 100%;object-fit: cover;" />
+            <img class="profile_img" src="/static/images/{id}.jpg" onerror="this.onerror=null; this.src='/static/images/default.jpg'" alt=""/>
         </div>
         <div class="right">
             <h2 class="name">{name}</h2>
@@ -32,7 +34,7 @@ html_str2 = '''
         <div class="form-wrap">
             <div class="input">
                 <label>Full Name</label>
-                <input name="new_name" autocomplete="off">
+                <input id="input_form" name="new_name" autocomplete="off">
             </div>
             <svg class="line">
             </svg>
@@ -53,7 +55,7 @@ html_str2 = '''
 
 
 @app.route('/')
-def index(df_res=None, title=None, requestor = None, error_message = ''):
+def index(df_res=None, title=None, requestor=None, error_message=''):
     if df_res is None:
         id_list = [(0, 'Jaydeep Gubba', 'Developer')]
     else:
@@ -69,12 +71,13 @@ def index(df_res=None, title=None, requestor = None, error_message = ''):
     else:
         counter = 1
         for i in id_list:
-            res += img_str1.format(id=i[0], name=i[1], description=i[2], card_id = f"card_{counter}", style_data="")
-            counter +=1
+            res += img_str1.format(id=i[0], name=i[1], description=i[2], card_id=f"card_{counter}", style_data="")
+            counter += 1
         # if requestor is not None:
         #     req_data = requestor[['id', 'name', 'description', 'style']].to_dict('split')['data'][0]
         #     res += img_str1.format(id=req_data[0], name=req_data[1], description=req_data[2], card_id = f"card_requestor", style_data=req_data[3])
-    return render_template('index.html', result=res, title=title, form_data = html_str2.format(title = title) if title!='Developer' else '')
+    return render_template('index.html', result=res, title=title,
+                           form_data=html_str2.format(title=title) if title != 'Developer' else '')
 
 
 @app.route('/parent/<id>')
@@ -89,17 +92,18 @@ def go_to_parent(id):
     description = f'Parent of {main_name}'
     parent_id = int(df[df['id'] == id]['parent'])
     if parent_id == -1:
-        return index(pd.DataFrame(columns=['id', 'name', 'parent', 'spouse','description']), req_title, error_message=f'No Parent data available for {main_name}')
+        return index(pd.DataFrame(columns=['id', 'name', 'parent', 'spouse', 'description']), req_title,
+                     error_message=f'No Parent data available for {main_name}')
     spouse_id_of_parent = int(df[df['id'] == parent_id]['spouse'])
     spouse_id_of_parent = -2 if spouse_id_of_parent == -1 else spouse_id_of_parent
-    df_res = df[(df['id'] == parent_id) | (df['id']==spouse_id_of_parent)]
+    df_res = df[(df['id'] == parent_id) | (df['id'] == spouse_id_of_parent)]
     df_res['description'] = description
-    return index(df_res, req_title, requestor = requestor)
+    return index(df_res, req_title, requestor=requestor)
 
 
 @app.route('/children/<id>')
 def go_to_children(id):
-    id=int(id)
+    id = int(id)
     df = pd.read_csv(source_data)
     requestor = df[df['id'] == id]
     requestor['style'] = 'position: absolute;left: 50px;top: 155.8px;'
@@ -108,10 +112,10 @@ def go_to_children(id):
     req_title = f'Children of {main_name}'
     description = f'Child of {main_name}'
     spouse_id = int(df[df['id'] == id]['spouse'])
-    spouse_id = -2 if spouse_id==-1 else spouse_id
+    spouse_id = -2 if spouse_id == -1 else spouse_id
     df_res = df[(df['parent'] == id) | (df['parent'] == spouse_id)]
     df_res['description'] = description
-    return index(df_res, req_title, requestor = requestor)
+    return index(df_res, req_title, requestor=requestor)
 
 
 @app.route('/spouse/<id>')
@@ -124,8 +128,9 @@ def go_to_spouse(id):
     main_name = list(requestor['name'])[0]
     req_title = f'Spouse of {main_name}'
     df_res = df[(df['id'] == id) | (df['spouse'] == id)]
-    df_res['description'] = df_res.apply(lambda a: req_title if a['id']!=id else 'Self', axis=1)
+    df_res['description'] = df_res.apply(lambda a: req_title if a['id'] != id else 'Self', axis=1)
     return index(df_res, req_title)
+
 
 @app.route('/siblings/<id>')
 def go_to_sibling(id):
@@ -141,7 +146,7 @@ def go_to_sibling(id):
     spouse_id_of_parent = int(df[df['id'] == parent_id]['spouse'])
     spouse_id_of_parent = -2 if spouse_id_of_parent == -1 else spouse_id_of_parent
     df_res = df[(df['parent'] == parent_id) | (df['parent'] == spouse_id_of_parent)]
-    df_res['description'] = df_res.apply(lambda a: req_title if a['id']!=id else 'Self', axis=1)
+    df_res['description'] = df_res.apply(lambda a: req_title if a['id'] != id else 'Self', axis=1)
     return index(df_res, req_title)
 
 
@@ -153,7 +158,7 @@ def update_child_of(id):
         full_name = request.form['new_name']
         df = pd.read_csv(source_data)
         last_id = max(df['id'])
-        new_df = pd.DataFrame([[last_id+1, full_name, id, -1]],columns=df.columns)
+        new_df = pd.DataFrame([[last_id + 1, full_name, id, -1]], columns=df.columns)
         df = pd.concat([df, new_df])
         df.to_csv(source_data, index=False)
     return go_to_children(id)
@@ -168,7 +173,7 @@ def add_parent_of(id):
         df = pd.read_csv(source_data)
         last_id = max(df['id'])
         new_parent_id = last_id + 1
-        #updating the parent of child
+        # updating the parent of child
         if df.at[df[df['id'] == id].index[0], 'parent'] == -1:
             df.at[df[df['id'] == id].index[0], 'parent'] = new_parent_id
             new_df = pd.DataFrame([[new_parent_id, full_name, -1, -1]], columns=df.columns)
@@ -180,6 +185,7 @@ def add_parent_of(id):
         df.to_csv(source_data, index=False)
     return go_to_parent(id)
 
+
 @app.route('/spouse/<id>', methods=['POST'])
 def add_spouse_of(id):
     id = int(id)
@@ -189,13 +195,14 @@ def add_spouse_of(id):
         df = pd.read_csv(source_data)
         last_id = max(df['id'])
         new_spouse_id = last_id + 1
-        #adding spouse of id as full_name
+        # adding spouse of id as full_name
         df.at[df[df['id'] == id].index[0], 'spouse'] = new_spouse_id
-        #adding new entry
+        # adding new entry
         new_df = pd.DataFrame([[new_spouse_id, full_name, -1, id]], columns=df.columns)
         df = pd.concat([df, new_df])
         df.to_csv(source_data, index=False)
     return go_to_spouse(id)
+
 
 @app.route('/siblings/<id>', methods=['POST'])
 def add_siblings(id):
@@ -210,8 +217,21 @@ def add_siblings(id):
         req_title = f'Siblings of {main_name}'
         parent_id = int(df[df['id'] == id]['parent'])
         if parent_id == -1:
-            return index(pd.DataFrame(columns=['id', 'name', 'parent', 'spouse', 'description']), req_title, error_message=f'No Parent data available for {main_name}')
+            return index(pd.DataFrame(columns=['id', 'name', 'parent', 'spouse', 'description']), req_title,
+                         error_message=f'No Parent data available for {main_name}')
         new_df = pd.DataFrame([[new_sibling_id, full_name, parent_id, -1]], columns=df.columns)
         df = pd.concat([df, new_df])
         df.to_csv(source_data, index=False)
     return go_to_sibling(id)
+
+
+@app.route('/upload_avatar', methods=['POST'])
+def upload_avatar():
+    print(request)
+    print(request.files['file'], request.form['user_id'], request.form['current_path'])
+    file = request.files['file']
+    file.save(f'{project_path}/static/images/{request.form["user_id"]}.jpg')
+    return redirect(request.form['current_path'])
+    
+
+
