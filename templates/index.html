@@ -3,19 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <title>Family Tree</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.4.1/snap.svg-min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="/static/js/leader-line.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="/static/css/style.css" rel="stylesheet"  type="text/css"/>
+
 </head>
 <body>
-<h1 style="color: #fff;">{{title}}</h1>
-<br>
-{{ result | safe }}
 
-{{ form_data | safe }}
+<header>
+    <div class="search-bar">
+        <input type="text" placeholder="Search family member..." id="searchInput" oninput="showSuggestions(this.value)">
+        <div class="suggestions" id="suggestionsBox"></div>
+    </div>
+</header>
+
+<div class="page-title" id="pageTitle">
+    {{ title }}
+</div>
+
+<section class="tree-container" id="treeContainer">
+    {{ result | safe }}
+</section>
 
 
-<script src="/static/js/scripts.js" type="text/javascript"></script>
+{{ add_more_html | safe }}
+
+<!-- Modal Form -->
+<div class="modal" id="nodeModal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <h2 id="modalTitle">Update Member</h2>
+        <form id="nodeForm" enctype="multipart/form-data" method="post">
+            <input type="hidden" name="current_id">
+            <input type="text" name="new_name" placeholder="Full Name" required>
+            <input type="tel" name="new_phone" placeholder="Phone Number" pattern="[0-9+]{1}[0-9]{1,}" >
+            <input type="file" name="new_photo" accept="image/*">
+            <button type="submit">Save</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    const suggestions = {{ suggestions | safe }};
+    const suggestionsBox = document.getElementById("suggestionsBox");
+
+    function showSuggestions(query) {
+        suggestionsBox.innerHTML = '';
+        if (!query) return;
+        const filtered = suggestions.filter(s => s.name.toLowerCase().includes(query.toLowerCase()));
+        filtered.forEach(item => {
+            const div = document.createElement("div");
+            div.className = "suggestion-item";
+            div.textContent = item.name;
+            div.onclick = () => {
+                window.location.href = `/${item.id}`;
+            };
+            suggestionsBox.appendChild(div);
+        });
+    }
+
+    const modal = document.getElementById("nodeModal");
+    const modalTitle = document.getElementById("modalTitle");
+    const form = document.getElementById("nodeForm");
+
+    function openModal(type, data = {}) {
+        modal.style.display = "flex";
+        modalTitle.textContent = type === 'create' ? 'Add New Member' : 'Update Member';
+
+        form.reset();
+
+        if (type === 'update' && data) {
+            form.new_name.value = data.name || '';
+            form.new_phone.value = data.phone || '';
+            form.current_id.value = data.id || '';
+        }
+        if (form.new_phone.value === '-') {
+            form.new_phone.value = ''
+        }
+    }
+
+    function closeModal() {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            closeModal();
+        }
+    }
+</script>
+
 </body>
 </html>

@@ -1,270 +1,304 @@
-id,name,parent,spouse
--1,No Data,-1,-1
-0,Jaydeep Gubba,1,-1
-1,Ajai Kumar Gubba,4,2
-2,Prasanna Laxmi Gubba,6,1
-3,Saket Gubba,1,7
-4,Chandramouli Gubba,27,5
-5,Kalawathi Gubba,68,4
-6,Chandraya Gonuru,92,8
-7,Keerthana Buragadda,94,3
-8,Sulochana Gonuru,200,6
-9,Vijay Kumar Gubba,4,10
-10,Jhansi Laxmi Gubba,95,9
-11,Abhinav Gubba,9,13
-12,Akshay Gubba,9,97
-13,Lalithya Gubba,101,11
-14,Amarnath Gonuru,6,15
-15,Gayathri Gonuru,104,14
-16,Mounika Gonuru,14,-1
-17,Srujan Gonuru,14,-1
-18,Suresh Gonuru,6,19
-19,Rani Gonuru,-1,18
-20,Ravali Gonuru,18,-1
-21,Rohith Gonuru,18,-1
-22,Ravindhar Gonuru,6,23
-23,Madhavi Gonuru,126,22
-24,Sowmya Gonuru,22,123
-25,Shravya Gonuru,22,125
-26,Teja Gonuru,22,-1
-27,Kistaiah Gubba,-1,28
-28,Balamma Gubba,-1,27
-29,Pullayya Gubba,27,-1
-30,Rama Krishna Gubba,29,31
-31,Annapoorna Gubba,-1,30
-32,Swetha Gubba,30,36
-33,Varun Gubba,30,37
-34,Sneha Gubba,30,35
-35,Ajai,-1,34
-36,Suman,-1,32
-37,Vijaya Sri,-1,33
-38,Srinivas Gubba,29,-1
-39,Shankarayya Gubba,29,-1
-40,Bharayya Gubba,27,41
-41,Laxmi Dhevamma,-1,40
-42,Krishna Veni,40,45
-43,Geetha,40,-1
-44,Murali Gubba,40,49
-45,Prabakar,-1,42
-46,Vishala,40,-1
-47,Unknown1,-1,-1
-48,Unknown2,-1,-1
-49,Murali wife need to fill,-1,44
-50,Ramadhevi,29,51
-51,ramadhevi husmand unknown,-1,50
-52,Divya gubba,44,-1
-53,Ravali Gubba,44,-1
-54,Jaganatham,27,54
-55,Vijaya Laxmi,-1,55
-56,Ramesh Gubba,54,57
-57,Aruna Gubba,-1,56
-58,Mahesh Gubba,54,59
-59,Sirisha,-1,58
-60,Bhanu,54,61
-61,Sri Laxmi,-1,60
-62,Janakiramulu,27,63
-63,Vara laxmi,-1,62
-64,Bhargavi,62,65
-65,Bhargavi husband,-1,64
-66,Suman,62,67
-67,Lavanya,-1,66
-68,Veerayahya,-1,-1
-69,Sugunamma,68,69
-70,Nandha Kishor,68,72
-71,Virupakshya,-1,69
-72,Krishna veni,-1,70
-73,Laxmi Narayana,69,-1
-74,Vasantha,69,-1
-75,Anandh,69,-1
-76,Ramu,69,-1
-77,Krishna,69,-1
-78,Shiva,69,-1
-79,Jaya Shri,69,-1
-80,Venkata laxmi,69,-1
-81,Raju Kumar Maliyala,70,82
-82,Padmaja,-1,81
-83,Munna,81,-1
-84,Vinodh Kumar Maliyala,70,85
-85,Kalyani,-1,84
-86,Pramodh Kumar Maliyala,70,87
-87,Laxmi,-1,86
-88,Sunil Kumar Maliyala,70,89
-89,Jyothi,-1,88
-90,Rishi,88,-1
-91,Ridhi,88,-1
-92,Shankarahya,265,115
-93,Anitha Buragadda,-1,94
-94,Ravi Buragadda,-1,93
-95,Ramulu Garalapati,-1,95
-96,Ramulu's wife,-1,96
-97,Deepika Batchu,98,12
-98,Ramana Murthy Batchu,-1,99
-99,Swarna Latha,-1,98
-100,Dlip Batchu,98,-1
-101,Rajendhar Karikelli,-1,102
-102,Latha Karikelli,-1,101
-103,Prem Sai,101,-1
-104,karamchand Konduru,-1,105
-105,Eershwaramma Konduru,-1,104
-106,Krishna Mohan,104,107
-107,Radha,40,106
-108,Ravi Konduru,104,109
-109,Padma,-1,108
-110,Srikanth,104,111
-111,Swapna,-1,110
-112,Chandrakanth,104,113
-113,Swathi,-1,112
-114,Anil,-1,20
-115,Nagamma,261,92
-116,rangaswamy,92,150
-117,srinivasulu,92,-1
-118,ramulu,92,157
-119,laxman,92,168
-120,Bala Raju,92,174
-121,Lalithamma,92,184
-122,Sugunamma,92,193
-123,Sai Swaroop,-1,24
-124,Advik,24,-1
-125,Yeshwanth,-1,25
-126,Suvarna,-1,-1
-127,Radhika,126,-1
-128,Shashidhar,126,-1
-129,Aruna,126,-1
-130,Mani,106,-1
-131,Venkatesh,116,134
-132,Narendhar,116,135
-133,Neeraja,116,136
-134,Aruna,-1,131
-135,Sirisha,-1,132
-136,Balaji,-1,133
-137,Ramya,131,-1
-138,Rahul,131,-1
-139,Rakshitha,132,-1
-140,Shilaja,117,141
-141,Chandhrodaya Kumar,-1,140
-142,Vamshidhar(Raju),117,143
-143,Rupa,-1,142
-144,Sai Varun,142,-1
-145,Vinodh,117,148
-146,Jyothi,117,149
-147,Muralidhar,117,151
-148,Prathiba,-1,145
-149,Ramesh Bheema,184,146
-150,Patmavathi,260,116
-151,Bhargavi,-1,147
-152,Praneeth,149,-1
-153,Pravalika,149,-1
-154,Anjali,140,-1
-155,Teja,140,-1
-156,Anmisha,140,-1
-157,Vijaya Laxmi,-1,118
-158,Sunita,118,159
-159,Prashanth,-1,158
-160,Satwika,158,-1
-161,Swapna,118,162
-162,Venu,-1,161
-163,Shiva Kumar,118,164
-164,Vara Laxmi,-1,163
-165,Shankar Prasad,118,166
-166,Swati,-1,165
-167,Vallari,165,-1
-168,Parijatha,-1,119
-169,Sirisha,119,170
-170,Surya,-1,169
-171,Kiran,119,172
-172,Sushma,-1,171
-173,Sidharth,171,-1
-174,Jay Laxmi,-1,120
-175,Bharathi,120,176
-176,Kishore,-1,175
-177,Bhanu Prakash,175,-1
-178,Mytri,175,-1
-179,Kalyani,120,180
-180,Laxman,-1,179
-181,Sravanthi,120,182
-182,Pradeep,-1,181
-183,Shahari,181,-1
-184,Krishnayya Bheema,-1,121
-185,Srinivas Bheema,184,186
-186,Jyothi,-1,185
-187,Sri Laxmi,185,-1
-188,Sri Charan,185,-1
-189,Praveen Bheema,184,190
-190,Annapoorna,-1,189
-191,Sai Sindhu,190,-1
-192,Sai Varun,190,-1
-193,Ramulu Bilakanti,-1,122
-194,Shravan,122,195
-195,Shilpa,-1,194
-196,Saketh,194,-1
-197,Arun,122,-1
-198,Jyotsna,122,199
-199,Murali,-1,198
-200,Venkatayya Dara,261,201
-201,Krishnaveni,-1,200
-202,Narasimhulu,200,203
-203,Saroja,-1,202
-204,Jay Laxmi,202,205
-205,Sudarshan,-1,204
-206,Saritha,204,-1
-207,Suguna,202,208
-208,Pandu,-1,207
-209,Rajesh,207,-1
-210,Radhika,207,-1
-211,Lavanya,207,-1
-212,Srinivas,202,213
-213,Laxmi,-1,212
-214,Gayatri,213,-1
-215,Roja,213,-1
-216,Chintu,213,-1
-217,Ramu,202,218
-218,Sandhya,-1,217
-219,Keerthi,217,-1
-220,Laxman Dara,202,221
-221,Madhavi,-1,220
-222,Teja,220,-1
-223,Vishwanatham,200,224
-224,Jadalamma,-1,223
-225,Ragavendra,223,226
-226,Savitha,-1,225
-227,Srikanth,223,-1
-228,Laxmi Narayana,200,229
-229,Leelavathi,-1,228
-230,Karthik,228,-1
-231,Venu,200,232
-232,Laxmi,-1,231
-233,Janakamma,200,234
-234,Satyanarayana,-1,233
-235,Leela,233,236
-236,Buchayya,-1,235
-237,Swathi,235,-1
-238,Vinay,235,-1
-239,Vimala,233,240
-240,Venkata swamy,-1,239
-241,Krishna,233,242
-242,Vasundhara,-1,241
-243,Suresh,233,-1
-244,Bala Laxmi,200,245
-245,Srinivasulu,-1,244
-246,Kavitha,244,247
-247,Vinod,-1,246
-248,Satish,244,249
-249,Ravali,-1,248
-250,Prashanth,244,251
-251,Jhanaki,-1,250
-252,Pushpa,200,253
-253,Pulayya,-1,252
-254,Sangeetha,252,255
-255,Rajesh,-1,254
-256,Srikanth,252,257
-257,Vijju sri,-1,256
-258,Karthik,106,-1
-259,Pranavi,147,-1
-260,Kishtappa,261,-1
-261,Sitharam,262,-1
-262,Budayya,-1,-1
-263,Ramulu,261,-1
-264,Shankaramma,261,-1
-265,Ramanayya,-1,266
-266,Kistamma,-1,265
-267,Priyanka,84,-1
+id,name,parent,spouse,phone
+-1,No Data,-1,-1,-
+0,Jaydeep Gubba,1,276,9052838857
+1,Ajai Kumar Gubba,4,2,-
+2,Prasanna Laxmi Gubba,6,1,-
+3,Saket Gubba,1,7,9002967738
+4,Chandramouli Gubba,27,5,-
+5,Kalawathi Gubba,68,4,-
+6,Chandraya Gonuru,92,8,-
+7,Keerthana Buragadda,94,3,-
+8,Sulochana Gonuru,200,6,-
+9,Vijay Kumar Gubba,4,10,-
+10,Jhansi Laxmi Gubba,95,9,-
+11,Abhinav Gubba,9,13,-
+12,Akshay Gubba,9,97,-
+13,Lalithya Gubba,101,11,-
+14,Amarnath Gonuru,6,15,-
+15,Gayathri Gonuru,104,14,-
+16,Mounika Gonuru,14,-1,-
+17,Srujan Gonuru,14,-1,-
+18,Surender Gonuru,6,19,-
+19,Rani Gonuru,-1,18,-
+20,Ravali Gonuru,18,-1,-
+21,Rohith Gonuru,18,-1,-
+22,Ravinder Gonuru,6,23,-
+23,Madhavi Gonuru,126,22,-
+24,Sowmya Gonuru,22,123,-
+25,Shravya Gonuru,22,125,-
+26,Teja Gonuru,22,-1,-
+27,Kistaiah Gubba,-1,28,-
+28,Balamma Gubba,-1,27,-
+29,Pullayya Gubba,27,-1,-
+30,Rama Krishna Gubba,29,31,-
+31,Annapoorna Gubba,-1,30,-
+32,Swetha Gubba,30,36,-
+33,Varun Gubba,30,37,-
+34,Sneha Gubba,30,35,-
+35,Ajai,-1,34,-
+36,Suman,-1,32,-
+37,Vijaya Sri,-1,33,-
+38,Srinivas Gubba,29,-1,-
+39,Shankarayya Gubba,29,-1,-
+40,Bharayya Gubba,27,41,-
+41,Laxmi Dhevamma,-1,40,-
+42,Krishna Veni,40,45,-
+43,Geetha,40,-1,-
+44,Murali Gubba,40,49,-
+45,Prabakar,-1,42,-
+46,Vishala,40,-1,-
+47,Unknown1,-1,-1,-
+48,Unknown2,-1,-1,-
+49,Murali wife need to fill,-1,44,-
+50,Ramadhevi,29,51,-
+51,ramadhevi husmand unknown,-1,50,-
+52,Divya gubba,44,-1,-
+53,Ravali Gubba,44,-1,-
+54,Jaganatham,27,54,-
+55,Vijaya Laxmi,-1,55,-
+56,Ramesh Gubba,54,57,-
+57,Aruna Gubba,-1,56,-
+58,Mahesh Gubba,54,59,-
+59,Sirisha,-1,58,-
+60,Bhanu,54,61,-
+61,Sri Laxmi,-1,60,-
+62,Janakiramulu,27,63,-
+63,Vara laxmi,-1,62,-
+64,Bhargavi,62,65,-
+65,Bhargavi husband,-1,64,-
+66,Suman,62,67,-
+67,Lavanya,-1,66,-
+68,Veerayahya,-1,-1,-
+69,Sugunamma,68,69,-
+70,Nandha Kishor,68,72,-
+71,Virupakshya,-1,69,-
+72,Krishna veni,-1,70,-
+73,Laxmi Narayana,69,-1,-
+74,Vasantha,69,-1,-
+75,Anandh,69,-1,-
+76,Ramu,69,-1,-
+77,Krishna,69,-1,-
+78,Shiva,69,-1,-
+79,Jaya Shri,69,-1,-
+80,Venkata laxmi,69,-1,-
+81,Raju Kumar Maliyala,70,82,-
+82,Padmaja,-1,81,-
+83,Munna,81,-1,-
+84,Vinodh Kumar Maliyala,70,85,-
+85,Kalyani,-1,84,-
+86,Pramodh Kumar Maliyala,70,87,-
+87,Laxmi,-1,86,-
+88,Sunil Kumar Maliyala,70,89,-
+89,Jyothi,-1,88,-
+90,Rishi,88,-1,-
+91,Ridhi,88,-1,-
+92,Shankarahya,265,115,-
+93,Anitha Buragadda,-1,94,-
+94,Ravi Buragadda,-1,93,-
+95,Ramulu Garalapati,-1,95,-
+96,Ramulu's wife,-1,96,-
+97,Deepika Batchu,98,12,-
+98,Ramana Murthy Batchu,-1,99,-
+99,Swarna Latha,-1,98,-
+100,Dlip Batchu,98,-1,-
+101,Rajendhar Karikelli,-1,102,-
+102,Latha Karikelli,-1,101,-
+103,Prem Sai,101,-1,-
+104,karamchand Konduru,-1,105,-
+105,Eershwaramma Konduru,-1,104,-
+106,Krishna Mohan,104,107,-
+107,Radha,40,106,-
+108,Ravi Konduru,104,109,-
+109,Padma,-1,108,-
+110,Srikanth,104,111,-
+111,Swapna,-1,110,-
+112,Chandrakanth,104,113,-
+113,Swathi,-1,112,-
+114,Anil,-1,20,-
+115,Nagamma,261,92,-
+116,rangaswamy,92,150,-
+117,srinivasulu,92,274,-
+118,ramulu,92,157,-
+119,laxman,92,168,-
+120,Bala Raju,92,174,-
+121,Lalithamma,92,184,-
+122,Sugunamma,92,193,-
+123,Sai Swaroop,-1,24,-
+124,Advik,24,-1,-
+125,Yeshwanth,-1,25,-
+126,Suvarna,-1,-1,-
+127,Radhika,126,-1,-
+128,Shashidhar,126,-1,-
+129,Aruna,126,-1,-
+130,Mani,106,-1,-
+131,Venkatesh,116,134,-
+132,Narendhar,116,135,-
+133,Neeraja,116,136,-
+134,Aruna,-1,131,-
+135,Sirisha,-1,132,-
+136,Balaji,-1,133,-
+137,Ramya,131,273,-
+138,Rahul,131,-1,-
+139,Rakshitha,132,-1,-
+140,Shilaja,117,141,-
+141,Chandhrodaya Kumar,-1,140,-
+142,Vamshidhar(Raju),117,143,-
+143,Rupa,-1,142,-
+144,Sai Varun,142,-1,-
+145,Vinodh,117,148,-
+146,Jyothi,117,149,-
+147,Muralidhar,117,151,-
+148,Prathiba,-1,145,-
+149,Ramesh Bheema,184,146,-
+150,Patmavathi,260,116,-
+151,Bhargavi,-1,147,-
+152,Praneeth,149,-1,-
+153,Pravalika,149,-1,-
+154,Anjali,140,-1,-
+155,Teja,140,-1,-
+156,Anmisha,140,-1,-
+157,Vijaya Laxmi,-1,118,-
+158,Sunita,118,159,-
+159,Prashanth,-1,158,-
+160,Satwika,158,-1,-
+161,Swapna,118,162,-
+162,Venu,-1,161,-
+163,Shiva Kumar,118,164,-
+164,Vara Laxmi,-1,163,-
+165,Shankar Prasad,118,166,-
+166,Swati,-1,165,-
+167,Vallari,165,-1,-
+168,Parijatha,-1,119,-
+169,Sirisha,119,170,-
+170,Surya,-1,169,-
+171,Kiran,119,172,-
+172,Sushma,-1,171,-
+173,Sidharth,171,-1,-
+174,Jay Laxmi,-1,120,-
+175,Bharathi,120,176,-
+176,Kishore,-1,175,-
+177,Bhanu Prakash,175,-1,-
+178,Mytri,175,-1,-
+179,Kalyani,120,180,-
+180,Laxman,-1,179,-
+181,Sravanthi,120,182,-
+182,Pradeep,-1,181,-
+183,Shahari,181,-1,-
+184,Krishnayya Bheema,-1,121,-
+185,Srinivas Bheema,184,186,-
+186,Jyothi,-1,185,-
+187,Sri Laxmi,185,-1,-
+188,Sri Charan,185,-1,-
+189,Praveen Bheema,184,190,-
+190,Annapoorna,-1,189,-
+191,Sai Sindhu,190,-1,-
+192,Sai Varun,190,-1,-
+193,Ramulu Bilakanti,-1,122,-
+194,Shravan,122,195,-
+195,Shilpa,-1,194,-
+196,Saketh,194,-1,-
+197,Arun,122,-1,-
+198,Jyotsna,122,199,-
+199,Murali,-1,198,-
+200,Venkatayya Dara,261,201,-
+201,Krishnaveni,-1,200,-
+202,Narasimhulu,200,203,-
+203,Saroja,-1,202,-
+204,Jay Laxmi,202,205,-
+205,Sudarshan,-1,204,-
+206,Saritha,204,-1,-
+207,Suguna,202,208,-
+208,Pandu,-1,207,-
+209,Rajesh,207,-1,-
+210,Radhika,207,-1,-
+211,Lavanya,207,-1,-
+212,Srinivas,202,213,-
+213,Laxmi,-1,212,-
+214,Gayatri,213,-1,-
+215,Roja,213,-1,-
+216,Chintu,213,-1,-
+217,Ramu,202,218,-
+218,Sandhya,-1,217,-
+219,Keerthi,217,-1,-
+220,Laxman Dara,202,221,-
+221,Madhavi,-1,220,-
+222,Teja,220,-1,-
+223,Vishwanatham,200,224,-
+224,Jadalamma,-1,223,-
+225,Ragavendra,223,226,-
+226,Savitha,-1,225,-
+227,Srikanth,223,-1,-
+228,Laxmi Narayana,200,229,-
+229,Leelavathi,-1,228,-
+230,Karthik,228,-1,-
+231,Venu,200,232,-
+232,Laxmi,-1,231,-
+233,Janakamma,200,234,-
+234,Satyanarayana,-1,233,-
+235,Leela,233,236,-
+236,Buchayya,-1,235,-
+237,Swathi,235,275,-
+238,Vinay,235,-1,-
+239,Vimala,233,240,-
+240,Venkata swamy,-1,239,-
+241,Krishna,233,242,-
+242,Vasundhara,-1,241,-
+243,Suresh,233,-1,-
+244,Bala Laxmi,200,245,-
+245,Srinivasulu,-1,244,-
+246,Kavitha,244,247,-
+247,Vinod,-1,246,-
+248,Satish,244,249,-
+249,Ravali,-1,248,-
+250,Prashanth,244,251,-
+251,Jhanaki,-1,250,-
+252,Pushpa,200,253,-
+253,Pulayya,-1,252,-
+254,Sangeetha,252,255,-
+255,Rajesh,-1,254,-
+256,Srikanth,252,257,-
+257,Vijju sri,-1,256,-
+258,Karthik,106,-1,-
+259,Pranavi,147,-1,-
+260,Kishtappa,261,-1,-
+261,Sitharam,262,-1,-
+262,Budayya,-1,-1,-
+263,Ramulu,261,-1,-
+264,Shankaramma,261,-1,-
+265,Ramanayya,-1,266,-
+266,Kistamma,-1,265,-
+267,Priyanka,84,-1,-
+268,Kaarthika Buragadda,94,-1,-
+269,Sadhya,159,-1,-
+270,Aashrith,163,-1,-
+271,Medansh,163,-1,-
+272,Kaashish,161,-1,-
+273,Vamshi,-1,137,-
+274,Jhanakamma,-1,117,-
+275,Pramod,-1,237,-
+276,Nikitha Maram,277,0,6300657095
+277,Balakrishna Maram,282,278,-
+278,Anitha Maram,292,277,-
+279,Vandhana Maram,277,-1,-
+280,Kavya Maram,277,-1,-
+281,Yashaswi Maram,277,-1,-
+282,Yadhagiri Shetty,-1,291,-
+283,Praveen Kumar Maram,282,287,-
+284,Vijay Kumar Maram,282,288,-
+285,Satish Kumar Maram,282,289,-
+286,Sukanya (Chitti),282,290,-
+287,Sri Laxmi Maram,-1,283,-
+288,Prashanti Maram,-1,284,-
+289,Sri Laxmi Maram (Jaya),-1,285,-
+290,Balaji,-1,286,-
+291,Laxmi Devamma,-1,282,-
+292,Baleshwarayya,-1,293,-
+293,Anasuyamma,-1,292,-
+294,Sharanya Maram,283,-1,-
+295,Akhilesh Maram,283,-1,-
+296,Sridhan Maram,284,-1,-
+297,Yashwitha Maram,284,-1,-
+298,Hansitha Maram,285,-1,-
+299,Sunjay Maram,285,-1,-
+300,Kittu (Venky) Maram,286,-1,-
+301,Hari Maram,286,-1,-
