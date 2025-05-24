@@ -1,11 +1,12 @@
 import numpy as np
-from flask import Flask, redirect, url_for, render_template, request, flash
+from flask import Flask, redirect, url_for, render_template, request, flash, session
 
 import os
 from os.path import join, dirname
 import pandas as pd
 
 app = Flask(__name__)
+app.secret_key = '467684ec9f294246a77201abf88d3903'
 project_path = app.root_path
 source_data = project_path + '/static/data.csv'
 print(source_data)
@@ -36,9 +37,31 @@ add_more_html = '''
 '''
 
 
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        uname = request.form['username']
+        df = pd.read_csv(source_data)
+        df['phone'] = df['phone'].apply(lambda a: str(a).strip().replace(' ', ''))
+        df_res = df.loc[df['phone'] == str(uname).strip().replace(' ', '')]
+        df_res['description'] = 'Self'
+        if len(df_res.index) != 0:
+            session['username'] = uname
+            # return redirect(url_for('index'))
+            return index(df_res, list(df_res['name'])[0], requestor=None)
+        else:
+            flash("Hey!, your mobile number is not added.\n Please reach out to someone who has access")
+            return redirect(url_for('login'))
+    return render_template('login.html')
 
+@app.route('/logout')
+def logout():
+    session.pop('username', None)
+    return redirect(url_for('login'))
 @app.route('/')
 def index(df_res=None, title=None, requestor=None, error_message=''):
+    if 'username' not in session:
+        return redirect(url_for('login'))
     add_data = ''
     style_data = ''
     if df_res is None:
@@ -68,9 +91,13 @@ def index(df_res=None, title=None, requestor=None, error_message=''):
         for i in id_list:
             if i[3] == '-':
                 style_data='visibility: hidden;'
+                ph=i[3]
+            else:
+                ph=i[3]
+                ph = ph[:2]+'X'*(len(ph)-5)+ph[-3:]
 
             res += card_data_str.format(id=i[0], name=i[1], description=i[2], card_id=f"card_{counter}", style_data=style_data,
-                                        phone_number=i[3])
+                                        phone_number=ph)
             counter += 1
         # if requestor is not None:
         #     req_data = requestor[['id', 'name', 'description', 'style']].to_dict('split')['data'][0]
