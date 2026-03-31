@@ -5,7 +5,7 @@
     <title>Family Tree</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link href="/static/css/style.css" rel="stylesheet"  type="text/css"/>
+    <link href="/static/css/style.css" rel="stylesheet" type="text/css"/>
 
 </head>
 <body>
@@ -36,7 +36,7 @@
         <form id="nodeForm" enctype="multipart/form-data" method="post">
             <input type="hidden" name="current_id">
             <input type="text" name="new_name" placeholder="Full Name" required>
-            <input type="tel" name="new_phone" placeholder="Phone Number" pattern="[0-9+]{1}[0-9]{1,}" >
+            <input type="tel" name="new_phone" placeholder="Phone Number" pattern="[0-9+]{1}[0-9]{1,}">
             <input type="file" name="new_photo" accept="image/*">
             <button type="submit">Save</button>
         </form>
@@ -91,6 +91,20 @@
             closeModal();
         }
     }
+
+    function addViewport() {
+        let viewport = document.querySelector("meta[name=viewport]");
+        if (!viewport) {
+            // in case there is no view port meta tag creates one and add it to the head
+            viewport = document.createElement('meta');
+            viewport.name = "viewport";
+            document.getElementsByTagName('head')[0].appendChild(viewport);
+        }
+        const content = 'width=device-width, initial-scale=1.0';
+        viewport.setAttribute('content', content);
+    }
+
+    addViewport()
 </script>
 
 </body>

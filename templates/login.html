@@ -157,6 +157,19 @@
       <button type="submit" class="btn">Login</button>
     </form>
   </div>
-
+    <script>
+        function addViewport() {
+            let viewport = document.querySelector("meta[name=viewport]");
+            if (!viewport) {
+                // in case there is no view port meta tag creates one and add it to the head
+                viewport = document.createElement('meta');
+                viewport.name = "viewport";
+                document.getElementsByTagName('head')[0].appendChild(viewport);
+            }
+            const content = 'width=device-width, initial-scale=1.0';
+            viewport.setAttribute('content', content);
+        }
+        addViewport()
+    </script>
 </body>
 </html>
